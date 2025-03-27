@@ -1505,6 +1505,40 @@ body::-webkit-scrollbar-track {
 
 
 
+.thank-you-container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+  .home-button{
+    color: yellowgreen;
+  }
+  .thank-you-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .thank-you-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width:426px) {
+    .parallax-content{
+        padding: 15px;
+      }
+    
+  }
+
+
+
+
 
 
 
