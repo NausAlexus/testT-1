@@ -1,80 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.new-arrivals-slider-container');
-    const cards = document.querySelectorAll('.new-arrivals-card');
-    const cardWidth = cards[0].offsetWidth + 20; // width + margin
-    let currentPosition = 0;
-    const maxPosition = -(cardWidth * (cards.length - 4)); // Assuming 4 cards visible at a time
+let currentSlide = 0;
+const sliderContainer = document.querySelector('.new-arrivals-slider-container');
+const totalSlides = document.querySelectorAll('.new-arrivals-card').length;
 
-    // Navigation buttons (you can add these to your HTML or create them dynamically)
-    const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '❮';
-    prevBtn.className = 'slider-btn slider-btn-prev';
-    
-    const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '❯';
-    nextBtn.className = 'slider-btn slider-btn-next';
-    
-    const slider = document.querySelector('.new-arrivals-slider');
-    slider.insertBefore(prevBtn, slider.firstChild);
-    slider.appendChild(nextBtn);
+function moveSlide(direction) {
+    const slidesToShow = getSlidesToShow();
+    currentSlide += direction;
 
-    // Update button states
-    function updateButtons() {
-        prevBtn.disabled = currentPosition === 0;
-        nextBtn.disabled = currentPosition <= maxPosition;
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - slidesToShow;
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
     }
 
-    // Move slider
-    function moveSlider(direction) {
-        const cardsVisible = Math.floor(slider.offsetWidth / cardWidth);
-        const moveAmount = cardWidth * cardsVisible;
-        
-        if (direction === 'next' && currentPosition > maxPosition) {
-            currentPosition -= moveAmount;
-            if (currentPosition < maxPosition) currentPosition = maxPosition;
-        } else if (direction === 'prev' && currentPosition < 0) {
-            currentPosition += moveAmount;
-            if (currentPosition > 0) currentPosition = 0;
-        }
-        
-        sliderContainer.style.transform = `translateX(${currentPosition}px)`;
-        updateButtons();
+    const offset = -currentSlide * (100 / slidesToShow);
+    sliderContainer.style.transform = `translateX(${offset}%)`;
+}
+
+function getSlidesToShow() {
+    if (window.innerWidth < 480) {
+        return 1;
+    } else if (window.innerWidth < 768) {
+        return 2;
+    } else {
+        return 4;
     }
+}
 
-    // Event listeners
-    nextBtn.addEventListener('click', () => moveSlider('next'));
-    prevBtn.addEventListener('click', () => moveSlider('prev'));
+window.addEventListener('resize', () => {
+    moveSlide(0);
+});
 
-    // Touch events for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    moveSlide(0);
 
-    sliderContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
+    document.querySelector('.new-arrivals-prev').addEventListener('click', () => {
+        moveSlide(-1);
+    });
 
-    sliderContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, {passive: true});
-
-    function handleSwipe() {
-        const threshold = 50;
-        if (touchStartX - touchEndX > threshold) {
-            moveSlider('next');
-        } else if (touchEndX - touchStartX > threshold) {
-            moveSlider('prev');
-        }
-    }
-
-    // Initialize buttons
-    updateButtons();
-
-    // Responsive adjustments
-    window.addEventListener('resize', function() {
-        // Reset position on resize
-        currentPosition = 0;
-        sliderContainer.style.transform = 'translateX(0)';
-        updateButtons();
+    document.querySelector('.new-arrivals-next').addEventListener('click', () => {
+        moveSlide(1);
     });
 });
