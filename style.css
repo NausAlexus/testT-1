@@ -737,6 +737,19 @@ body::-webkit-scrollbar-track {
     color: #8bbbf9;
 }
 
+@media (max-width: 1080px) {
+    .Tower-card-title {
+        font-size: 2rem;
+    }
+    .Tower-card-icon {
+        font-size: 1.6rem;
+    }
+    
+    .Tower-card-text {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .Tower-card {
         width: 100%; /* Full width for smaller screens */
@@ -931,22 +944,6 @@ body::-webkit-scrollbar-track {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .new-arrivals {
     padding: 20px;
     text-align: left;
@@ -973,9 +970,8 @@ body::-webkit-scrollbar-track {
 }
 
 .new-arrivals-card {
-    background-color: #8d3b3b;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background-color: #1e253d;
+    border-radius: 16px;
     margin: 10px;
     padding: 15px;
     text-align: center;
@@ -996,14 +992,14 @@ body::-webkit-scrollbar-track {
 }
 
 .new-arrivals-card p {
-    color: #000000;
+    color: #a4a4a4;
 }
 
 .order-btn {
     margin-top: 10px;
     padding: 4px 25px;
-    background-color: #d20000;
-    color: white;
+    background-color: #ddc15d;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     border-radius: 20px;
     display: inline-block;
@@ -1015,13 +1011,14 @@ body::-webkit-scrollbar-track {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 217, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .new-arrivals-prev {
@@ -1052,8 +1049,284 @@ body::-webkit-scrollbar-track {
     }
 }
 
+.advantages-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 120px;
+}
+
+.advantages-title {
+    text-align: center;
+    font-size: 38px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.advantage-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.advantage-image {
+    width: 50%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.advantage-text {
+    width: 50%;
+    padding: 0 20px;
+}
+
+.advantage-subtitle {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.advantage-description {
+    font-size: 16px;
+    color: #a7a7a7;
+}
+
+.btn-vacancies {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .advantages-section {
+        padding: 40px 20px;
+    }
+    .advantage-block {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .advantage-image {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .advantage-text {
+        width: 100%;
+        padding: 0;
+    }
+
+    .revers-text {
+        flex-direction: column-reverse;
+    }
+}
+
+.faq-section {
+    max-width: 96%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #c5b661;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0; /* Скрываем ответ по умолчанию */
+    overflow: hidden;
+    padding: 0 15px; 
+    background-color: #211e44;
+    border-top: 1px solid #ddd;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding-top: 0; /* Изначально нет отступа вверху */
+    padding-bottom: 0; /* Изначально нет отступа внизу */
+}
+
+.faq-answer.open {
+    padding-top: 15px;  /* Отступ при открытом элементе */
+    padding-bottom: 15px; /* Отступ внизу при открытом элементе */
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .faq-section {
+        margin: 10px; 
+        padding: 15px; 
+        margin-top: 40px;
+        max-width: 100%;
+    }
+
+    .faq-title {
+        font-size: 1.5em; 
+    }
+
+    .faq-question {
+        padding: 10px; 
+    }
+}
+
+.team-section {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 96%;
+}
+
+.team-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+.team-icon {
+    font-size: 32px;
+}
+.team-section p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.team-card p { 
+    color: rgb(163, 149, 104);
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #1e253d;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px;
+    color: white;
+}
+
+.team-card p {
+    margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+    .team-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .team-card {
+        width: 100%;
+    }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+.reviews-section {
+    overflow: hidden;
+}
+
+.reviews-section-title {
+    text-align: center;
+    font-size: 2em;
+    color: #7e490b;
+    margin-bottom: 15px;
+}
+
+.slider-review {
+    margin-top: 15px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review {
+    flex: 0 0 100%;
+    padding: 5px;
+    border: 2px solid #7e490b;
+    border-radius: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.review p {
+    font-size: 14px;
+    color: #7e490b;
+}
+
+.author {
+    font-weight: bold;
+    color: rgb(150, 55, 20);
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.buttons-review {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-review {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 30px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    background-color: #eaeaea;
+    transition: background-color 0.3s ease;
+}
+
+.review img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
 
 
 
@@ -1087,5 +1360,14 @@ body::-webkit-scrollbar-track {
     }
     .start-button:hover {
         background-color: #0056b3;
+    }
+    .order-btn:hover {
+        background-color: #ffc800;
+    }
+    .new-arrivals-prev:hover, .new-arrivals-next:hover {
+        background-color: rgba(255, 217, 0, 0.707);
+    }
+    .btn-vacancies:hover {
+        background-color: rgb(20, 47, 106);
     }
 }
