@@ -16,6 +16,7 @@
     <script src="slider.js" defer></script>
     <script src="faq.js" defer></script>
     <script src="sliderReview.js" defer></script>
+    <script src="Games.js" defer></script>
 
 </head>
 
@@ -49,7 +50,7 @@
 
         <section class="about-us-container section-class">
             <div class="about-us-text">
-                <h2>Step into the World of TowerMasterHub!</h2>
+                <h1>Step into the World of TowerMasterHub!</h1>
                 <p>Are you ready to embark on the thrilling quest of building the ultimate tower? TowerMasterHub presents you with an exhilarating chance to showcase your skills, where every piece you position is vital to your success! Mastery, precision, and strategy will be your key assets as you construct magnificent structures. Are you set to dive into this adventure? Click below and begin your building journey now!</p>
             </div>
             <div class="about-us-image">
@@ -163,6 +164,88 @@
                 </div>
             </div>
         </section>
+
+
+<!-- Updated Our Games Section -->
+<section class="our-games-section section-class">
+    <h2 class="games-title">Our Other Games</h2>
+    <div class="games-container">
+        <!-- Existing games -->
+        <div class="game-card">
+            <img src="img/game1.jpg" alt="Amulet of Dead" class="game-thumbnail">
+            <h3 class="game-title">Amulet of Dead</h3>
+            <div class="game-iframe-container" data-src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vs20amuleteg&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game2.jpg" alt="Golden Wheel" class="game-thumbnail">
+            <h3 class="game-title">Golden Wheel</h3>
+            <div class="game-iframe-container" data-src="https://play.gpifungames.com/goldenwheel/?fun=1&op=mjmj88&hidelobby=1"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game3.jpg" alt="Dice Roll" class="game-thumbnail">
+            <h3 class="game-title">Dice Roll</h3>
+            <div class="game-iframe-container" data-src="//games-cv.com/dice__roll?refCode=promoRefCode"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game4.jpg" alt="Book of Santa" class="game-thumbnail">
+            <h3 class="game-title">Book of Santa</h3>
+            <div class="game-iframe-container" data-src="https://endorphina.com/games/book-of-santa/play"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <!-- Newly added games -->
+        <div class="game-card">
+            <img src="img/game5.jpg" alt="Book of Gold" class="game-thumbnail">
+            <h3 class="game-title">Book of Gold</h3>
+            <div class="game-iframe-container" data-src="https://xplatformwl-lrs.box-int-54f2g.com/launch?key=TEST1100000&partner=playsonsite-prod&gameName=book_of_gold_classic&lang=en&wl=pl_gate"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game6.jpg" alt="FH Slot" class="game-thumbnail">
+            <h3 class="game-title">FH Slot</h3>
+            <div class="game-iframe-container" data-src="https://games.egt-ong.com/?gameKey=FHSlot"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game7.jpg" alt="Book of Fallen" class="game-thumbnail">
+            <h3 class="game-title">Book of Fallen</h3>
+            <div class="game-iframe-container" data-src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vs10bookfallen&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+        
+        <div class="game-card">
+            <img src="img/game8.jpg" alt="Ultra Hot Deluxe" class="game-thumbnail">
+            <h3 class="game-title">Ultra Hot Deluxe</h3>
+            <div class="game-iframe-container" data-src="//games-cv.com/ultra_hot_deluxe?refCode=promoRefCode"></div>
+            <button class="play-button">Play Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal remains the same -->
+<div class="game-modal" id="gameModal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <iframe class="game-iframe" id="gameFrame" referrerpolicy="no-referrer" allowfullscreen></iframe>
+    </div>
+</div>        
+        <div class="game-modal" id="gameModal">
+            <div class="modal-content">
+                <button class="close-modal" id="closeModal">&times;</button>
+                <iframe class="game-iframe" id="gameFrame" referrerpolicy="no-referrer" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        
     
         <section class="new-arrivals section-class" id="about">
             <h2 class="new-arrivals-title">Embark on your adventure in three easy steps</h2>
@@ -204,7 +287,7 @@
         </section>
 
         <section class="advantages-section">
-            <h1 class="advantages-title">Join Our Team</h1>
+            <h2 class="advantages-title">Join Our Team</h2>
             
             <div class="advantage-block section-class advantage-block-1">
                 <img src="img/towen-1.jpg" alt="Salesperson" class="advantage-image">
@@ -228,7 +311,7 @@
         </section>
 
         <section class="faq-section section-class">
-            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
             <div class="faq-item" id="faq1">
                 <h2 class="faq-question">What is TowerMasterHub?</h2>
                 <p class="faq-answer">TowerMasterHub is an exciting strategy game where players construct towers and deploy tactics to rise above their competition.</p>
